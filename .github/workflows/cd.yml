@@ -3,7 +3,7 @@ name: CD
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy-frontend:
@@ -35,7 +35,7 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: Deploy to S3
-        run: aws s3 sync build/ s3:///0924 --delete
+        run: aws s3 sync build/ s3://0924 --delete
 
   deploy-backend:
     runs-on: ubuntu-latest
